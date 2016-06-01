@@ -1,3 +1,18 @@
 <h1>
-  {{title}}
+  Observable Example
 </h1>
+<label for="addItem">Add Item:</label>
+<input type="text" name="addItem" (keyup)="addItemKeyup$.next($event)">
+
+<label for="filterItems">Filter Items:</label>
+<input type="text" name="filterItems" (keyup)="filterItemKeyup$.next($event)">
+
+<h3>All items:</h3>
+<ul>
+  <li *ngFor="let item of allItems">{{item}}</li>
+</ul>
+
+<h3>Filtered Items:</h3>
+<ul>
+  <li *ngFor="let item of filteredItems">{{item}}</li>
+</ul>
